@@ -11,4 +11,5 @@ public class TrainSearchRequest {
     private String from;
     private String to;
     private String date;
+
 }

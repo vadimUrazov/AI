@@ -2,7 +2,6 @@ package com.example.trainai.service;
 
 import com.example.trainai.models.TrainRoute;
 import com.example.trainai.models.TrainSearchRequest;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

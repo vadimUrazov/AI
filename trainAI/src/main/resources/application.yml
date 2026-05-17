@@ -1,7 +1,7 @@
 spring:
   ai:
     openai:
-      api-key: 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
+      api-key: my-key
       chat:
         options:
           model: gpt-4

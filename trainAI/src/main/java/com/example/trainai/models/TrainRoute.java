@@ -13,4 +13,5 @@ public class TrainRoute {
     private String arrivalTime;
     private double price;
     private int availableSeats;
+
 }
