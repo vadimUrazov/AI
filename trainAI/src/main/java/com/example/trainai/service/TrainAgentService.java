@@ -40,10 +40,9 @@ public class TrainAgentService {
                 Если какой‑то параметр отсутствует, поставь null.
                 Не добавляй пояснений, только JSON.
                 """;
-
-        String extractedParams = chatClient.prompt(systemPrompt)
-                .user(userQuery)
-                .call().content();
+        String extractedParams = chatClient.prompt(
+                systemPrompt + "\n\nПользовательский запрос: " + userQuery
+        ).call().content();
 
         try {
             TrainSearchRequest request = new ObjectMapper()
