@@ -1,6 +1,6 @@
-package com.example.trainai;
+package com.example.trainai.service;
 
-import com.example.trainai.service.TrainAgentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +12,7 @@ public class TrainAgentController {
 
     private final TrainAgentService agentService;
 
+    @Autowired
     public TrainAgentController(TrainAgentService agentService) {
         this.agentService = agentService;
     }

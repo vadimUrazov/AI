@@ -4,6 +4,7 @@ import com.example.trainai.models.TrainRoute;
 import com.example.trainai.models.TrainSearchRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,6 +15,7 @@ public class TrainAgentService {
     private final ChatClient chatClient;
     private final TrainApiService trainApiService;
 
+    @Autowired
     public TrainAgentService(ChatClient chatClient, TrainApiService trainApiService) {
         this.chatClient = chatClient;
         this.trainApiService = trainApiService;

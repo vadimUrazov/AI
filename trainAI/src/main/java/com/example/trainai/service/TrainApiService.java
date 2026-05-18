@@ -2,6 +2,7 @@ package com.example.trainai.service;
 
 import com.example.trainai.models.TrainRoute;
 import com.example.trainai.models.TrainSearchRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,6 +14,7 @@ public class TrainApiService {
 
     private final RestTemplate restTemplate;
 
+    @Autowired
     public TrainApiService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
