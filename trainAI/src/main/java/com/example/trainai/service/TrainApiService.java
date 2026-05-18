@@ -28,7 +28,7 @@ public class TrainApiService {
                 request.getTo(),
                 request.getDate()
         );
-       TrainRoute[] response = restTemplate.getForObject(url, TrainRoute[].class);
+        TrainRoute[] response = restTemplate.getForObject(url, TrainRoute[].class);
         return Arrays.asList(response);
     }
 }

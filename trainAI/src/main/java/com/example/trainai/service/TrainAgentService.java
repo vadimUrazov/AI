@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,22 +24,22 @@ public class TrainAgentService {
 
     public String processTrainRequest(String userQuery) {
         String systemPrompt = """
-            Ты — AI‑агент для поиска железнодорожных рейсов.
-            Задача: извлечь из запроса пользователя параметры:
-            - пункт отправления (from)
-            - пункт назначения (to)
-            - дата поездки (date)
-
-            Формат ответа — строго JSON:
-            {
-              "from": "Москва",
-              "to": "Санкт‑Петербург",
-              "date": "2024-12-25"
-            }
-
-            Если какой‑то параметр отсутствует, поставь null.
-            Не добавляй пояснений, только JSON.
-            """;
+                Ты — AI‑агент для поиска железнодорожных рейсов.
+                Задача: извлечь из запроса пользователя параметры:
+                - пункт отправления (from)
+                - пункт назначения (to)
+                - дата поездки (date)
+                
+                Формат ответа — строго JSON:
+                {
+                  "from": "Москва",
+                  "to": "Санкт‑Петербург",
+                  "date": "2024-12-25"
+                }
+                
+                Если какой‑то параметр отсутствует, поставь null.
+                Не добавляй пояснений, только JSON.
+                """;
 
         String extractedParams = chatClient.prompt(systemPrompt)
                 .user(userQuery)
