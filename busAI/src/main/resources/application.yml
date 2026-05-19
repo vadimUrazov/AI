@@ -1,0 +1,8 @@
+spring:
+  ai:
+    openai:
+      api-key: my-key
+      chat:
+        options:
+          model: gpt-4
+          temperature: 0.3
