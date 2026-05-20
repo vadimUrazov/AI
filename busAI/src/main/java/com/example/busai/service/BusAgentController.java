@@ -17,7 +17,7 @@ public class BusAgentController {
         this.agentService = agentService;
     }
 
-    @PostMapping("/train-search")
+    @PostMapping("/bus-search")
     public ResponseEntity<String> searchTrains(@RequestBody Map<String, String> request) {
         String userQuery = request.get("query");
         String response = agentService.processBusRequest(userQuery);
